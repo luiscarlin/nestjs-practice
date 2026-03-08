@@ -23,5 +23,26 @@ Nest CLI
 
 Fresh Project
 
-- nest-cli.json -> nest specify file
-- entrypoint of app is 
+- `nest-cli.json` -> nest specify file
+- `main.ts` -> entrypoint of app
+- decorator is just a function that adds functionality to Classes, methods, properties, and parameters
+- Main goal of separation of concerns is 
+  - reusability
+  - testability
+  - organize code
+
+Project Structure
+
+- App Module
+  - root module of the app
+  - uses `@Module` decorator to hold everything important to the module context
+- Controller 
+  - uses `@Controller` decorator
+  - this is where requests are handled by the application
+  - the should be NO business logic in the Controller - use services/ providers for that
+  - pass providers that the controller uses in the constructor
+  - Defines `@Get` to handle GET requests
+- Providers/ Services 
+  - Business logic goes here
+  - uses `@Injectable`
+ 
