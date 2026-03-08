@@ -59,4 +59,8 @@ Project Structure
 - you can access request body properties in POST, by using `@Body()`
   - `create(@Body() body)` -> validates all properties in the request body
   - `create(@Body('name') name)` -> CAUTION: only validates name from the request body
-  - 
+- By default GET requests return 200 and POST return 201
+- if you need static status code (deprecated), you can use `@HttpCode(HttpStatus.GONE)`, but this is a static status code
+- with `findAll(@Res() response)` you can access Express' response object, but it's not recommended because
+  - Platform dependent (not easy to move to Fastify or another underlying framework)
+  - lose Nest features, like interceptors
