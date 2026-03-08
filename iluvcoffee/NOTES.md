@@ -46,3 +46,12 @@ Project Structure
   - Business logic goes here
   - uses `@Injectable`
  
+---
+- `nest generate controller` -> generates a controller (also `nest g co`)
+- use lowercase name
+- the controller gets added to app module dependencies
+- `@Controller("coffees")` -> "coffees" is metadata for routing. Network calls to `/coffees` will be handled by this controller
+- `@Get("flavors")` -> nested URL (/coffees/flavors)
+- `@Get(':id')` -> endpoint is expecting id as a route parameter /coffees/10. id = 10
+- 
+- 
