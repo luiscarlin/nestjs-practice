@@ -47,11 +47,16 @@ Project Structure
   - uses `@Injectable`
  
 ---
+
 - `nest generate controller` -> generates a controller (also `nest g co`)
 - use lowercase name
 - the controller gets added to app module dependencies
 - `@Controller("coffees")` -> "coffees" is metadata for routing. Network calls to `/coffees` will be handled by this controller
 - `@Get("flavors")` -> nested URL (/coffees/flavors)
 - `@Get(':id')` -> endpoint is expecting id as a route parameter /coffees/10. id = 10
-- 
-- 
+- you can access a single param by doing `findOne(@Param('id') id: string)` in the method signature
+- if you use `findOne(@Param() params)` you can access ALL params in the method
+- you can access request body properties in POST, by using `@Body()`
+  - `create(@Body() body)` -> validates all properties in the request body
+  - `create(@Body('name') name)` -> CAUTION: only validates name from the request body
+  - 
