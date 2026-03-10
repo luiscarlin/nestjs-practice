@@ -53,16 +53,16 @@ Project Structure
 - `@Controller("coffees")` -> "coffees" is metadata for routing. Network calls to `/coffees` will be handled by this controller
 - `@Get("flavors")` -> nested URL (/coffees/flavors)
 - `@Get(':id')` -> endpoint is expecting id as a route parameter /coffees/10. id = 10
-- you can access a single param by doing `findOne(@Param('id') id: string)` in the method signature
-- if you use `findOne(@Param() params)` you can access ALL params in the method
+- you can access a single path parameter by doing `findOne(@Param('id') id: string)` in the method signature
+- if you use `findOne(@Param() params)` you can access ALL path params in the method
 - you can access request body properties in POST, by using `@Body()`
   - `create(@Body() body)` -> validates all properties in the request body
   - `create(@Body('name') name)` -> CAUTION: only validates name from the request body
 - By default GET requests return 200 and POST return 201
-- if you need static status code (deprecated), you can use `@HttpCode(HttpStatus.GONE)`, but this is a static status code
+- if you need static status code (like deprecated), you can use `@HttpCode(HttpStatus.GONE)`, but this is a static status code
 - with `findAll(@Res() response)` you can access Express' response object, but it's not recommended because
-  - Platform dependent (not easy to move to Fastify or another underlying framework)
-  - lose Nest features, like interceptors
+  - platform dependent (not easy to move to Fastify or another underlying framework)
+  - you lose Nest features, like interceptors
 - `@Put(':id')` will replace the full resource
 - `@Patch(':id')` will partial modify properties of a resource
 - `@Delete(':id')` will delete the resource
