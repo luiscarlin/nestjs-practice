@@ -80,3 +80,8 @@ Services (aka providers):
   - private = access modifier. only accessible in this class
   - readonly = cannot be modified
 - resource entity = type for data
+
+Errors
+- there are multiple ways to return errors (interceptors, etc)
+- you can throw Httop Exceptions (NotFoundException, etc)
+- Exceptions that are not caught by your code are caught by Nest Exception layer and returned as 500 Internal Server Error
