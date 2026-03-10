@@ -14,12 +14,11 @@ Intro
   - clis
   - cron jobs
 
-
 Nest CLI
 
 - companion tool to Nest
 - you can scaffold projects, generate files, run, compile, bundle app (`nest --help` to list all functionality)
-- `nest new` -> scaffold a new project + files
+- `nest new` -> scaffold a new project
 
 Fresh Project
 
@@ -39,9 +38,9 @@ Project Structure
 - Controller 
   - uses `@Controller` decorator
   - this is where requests are handled by the application
-  - the should be NO business logic in the Controller - use services/ providers for that
+  - there should be NO business logic in the Controller - use services/ providers for that
   - pass providers that the controller uses in the constructor
-  - Defines `@Get` to handle GET requests
+  - Defines `@Get` to handle GET requests, etc
 - Providers/ Services 
   - Business logic goes here
   - uses `@Injectable`
@@ -49,7 +48,7 @@ Project Structure
 ---
 
 - `nest generate controller` -> generates a controller (also `nest g co`)
-- use lowercase name
+- use lowercase for name
 - the controller gets added to app module dependencies
 - `@Controller("coffees")` -> "coffees" is metadata for routing. Network calls to `/coffees` will be handled by this controller
 - `@Get("flavors")` -> nested URL (/coffees/flavors)
@@ -64,3 +63,9 @@ Project Structure
 - with `findAll(@Res() response)` you can access Express' response object, but it's not recommended because
   - Platform dependent (not easy to move to Fastify or another underlying framework)
   - lose Nest features, like interceptors
+- `@Put(':id')` will replace the full resource
+- `@Patch(':id')` will partial modify properties of a resource
+- `@Delete(':id')` will delete the resource
+- `@Params()` is for path parameters /coffee/123
+- `@Query()` is for query parameters /coffee/123?limit=20&offset=10
+- 
