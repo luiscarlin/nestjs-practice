@@ -68,4 +68,15 @@ Project Structure
 - `@Delete(':id')` will delete the resource
 - `@Params()` is for path parameters /coffee/123
 - `@Query()` is for query parameters /coffee/123?limit=20&offset=10
-- 
+
+Services (aka providers):
+- handles business logic + interactions with datasources (CRUD)
+- reusable
+- `nest generate service` to generate a new service
+- use `@Injectable`
+- inject the provider through the contructor
+- `constructor(private readonly coffeesService: CoffeesService) {}`
+  - creates a new instance or returns pre-existing one (Singleton) if provider created elsewhere
+  - private = access modifier. only accessible in this class
+  - readonly = cannot be modified
+- resource entity = type for data
