@@ -22,7 +22,7 @@ Nest CLI
 
 Fresh Project
 
-- `nest-cli.json` -> nest specify file
+- `nest-cli.json` -> nest specific file
 - `main.ts` -> entrypoint of app
 - decorator is just a function that adds functionality to Classes, methods, properties, and parameters
 - Main goal of separation of concerns is 
